@@ -1,0 +1,48 @@
+{
+  "dataset_version": "0.3-capability-stacks",
+  "generated_as_of": "2026-07-29",
+  "validation_scope": "Structural and referential integrity only",
+  "counts": {
+    "sources": 52,
+    "nodes": 52,
+    "edges": 60,
+    "ecosystems": 7,
+    "capability_layers_per_ecosystem": 13
+  },
+  "errors": [],
+  "warnings": [],
+  "isolated_nodes": [],
+  "ecosystem_scores": {
+    "US": {
+      "research_completeness_score": 0.92,
+      "capability_presence_score_unweighted": 0.92
+    },
+    "Israel": {
+      "research_completeness_score": 1.0,
+      "capability_presence_score_unweighted": 0.92
+    },
+    "China": {
+      "research_completeness_score": 0.85,
+      "capability_presence_score_unweighted": 0.77
+    },
+    "East_Asia_Semiconductors": {
+      "research_completeness_score": 0.54,
+      "capability_presence_score_unweighted": 0.54
+    },
+    "Europe": {
+      "research_completeness_score": 0.85,
+      "capability_presence_score_unweighted": 0.85
+    },
+    "Gulf": {
+      "research_completeness_score": 0.92,
+      "capability_presence_score_unweighted": 0.85
+    },
+    "India": {
+      "research_completeness_score": 0.69,
+      "capability_presence_score_unweighted": 0.69
+    }
+  },
+  "structural_validation_status": "pass",
+  "editorial_review_status": "research_draft",
+  "warning": "A structural pass does not establish that every source URL, current fact or analytical classification has completed final editorial review."
+}
