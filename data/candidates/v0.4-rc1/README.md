@@ -18,7 +18,9 @@ This candidate applies the reviewed corrections from the first two source-audit 
 
 ## Loading the dataset
 
-Read `manifest.json`, concatenate the listed base64 parts, decode them, verify the compressed and decoded SHA-256 checksums, and decompress the gzip payload.
+Read `manifest.json`, concatenate the eight files listed in `canonical_dataset.parts`, decode the combined base64 payload, verify the compressed and decoded SHA-256 checksums, and decompress the gzip payload.
+
+The smaller chunks are intentional. The first large multipart upload was truncated in transit, and the CI check correctly rejected it. The superseded large files were removed after the safe multipart archive passed validation.
 
 Run the repository validator:
 
@@ -35,6 +37,7 @@ python scripts/validate_candidate.py data/candidates/v0.4-rc1/manifest.json
 - 61 sources
 - 0 structural errors
 - 0 isolated nodes
+- compressed and decoded SHA-256 checksums verified in GitHub Actions
 
 ## Open research items
 
