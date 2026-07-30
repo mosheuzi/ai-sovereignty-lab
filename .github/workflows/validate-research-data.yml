@@ -33,4 +33,15 @@ jobs:
           python-version: "3.12"
 
       - name: Validate candidate archive and graph references
-        run: python scripts/validate_candidate.py data/candidates/v0.4-rc1/manifest.json
+        run: |
+          python scripts/validate_candidate.py \
+            data/candidates/v0.4-rc1/manifest.json \
+            --output-json build-artifacts/ai-ecosystem-v0.4-rc1.json
+
+      - name: Upload validated canonical dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-ecosystem-v0.4-rc1-canonical
+          path: build-artifacts/ai-ecosystem-v0.4-rc1.json
+          if-no-files-found: error
+          retention-days: 7
