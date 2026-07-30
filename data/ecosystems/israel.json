@@ -1,0 +1,24 @@
+{
+  "id": "Israel",
+  "strengths": ["AI and cyber R&D", "semiconductor design", "Physical AI and Edge AI", "public-sector adoption potential"],
+  "external_dependencies": ["frontier compute", "cloud platforms", "advanced fabrication", "global model providers"],
+  "strategic_character": "A high-innovation ecosystem pursuing greater sovereign capability while remaining externally dependent.",
+  "capability_stack": {
+    "energy_and_grid": {"status":"domestically_operated_mixed_ownership","node_ids":["israel_power_system"],"external_dependencies":[],"gap":"Grid readiness for hyperscale AI sites requires separate assessment.","confidence":"high"},
+    "international_connectivity": {"status":"partial","node_ids":["global_subsea_cables","medone_israel"],"external_dependencies":["international submarine cable network"],"gap":"A complete cable and landing-station inventory is still required.","confidence":"medium"},
+    "data_centers_physical_compute": {"status":"domestically_operated_mixed_ownership","node_ids":["israel_data_center_infrastructure","medone_israel","bynet_israel_data_centers"],"external_dependencies":["imported servers, networking and accelerators"],"gap":null,"confidence":"high"},
+    "cloud_regions_platforms": {"status":"foreign_owned_locally_hosted","node_ids":["aws_israel_region","google_cloud_tel_aviv","azure_israel_central"],"external_dependencies":["U.S.-owned hyperscalers"],"gap":"Local hosting improves residency but does not create full national cloud ownership.","confidence":"high"},
+    "semiconductor_design": {"status":"partial","node_ids":["intel_israel","nvidia_israel_research"],"external_dependencies":["global corporate ownership and product roadmaps"],"gap":"The current version does not yet enumerate all Israeli chip-design firms.","confidence":"medium"},
+    "semiconductor_fabrication_packaging": {"status":"foreign_owned_locally_operated","node_ids":["intel_israel"],"external_dependencies":["global equipment, materials and Intel corporate control"],"gap":"Local manufacturing exists, but is not nationally owned and is not a complete leading-edge foundry stack.","confidence":"high"},
+    "accelerators_memory": {"status":"import_dependent","node_ids":["advanced_ai_accelerators"],"external_dependencies":["United States","Taiwan","South Korea","global supply chain"],"gap":"No domestic frontier accelerator or HBM manufacturing capability is established.","confidence":"high"},
+    "model_labs": {"status":"domestically_owned","node_ids":["ai21"],"external_dependencies":["external accelerator and cloud capacity"],"gap":"Additional Israeli model labs should be inventoried in the next research pass.","confidence":"high"},
+    "data_language_assets": {"status":"partial","node_ids":["israel_language_context_assets"],"external_dependencies":[],"gap":"Data availability, licensing, governance and model readiness are not yet inventoried.","confidence":"medium"},
+    "applications_industrial_ai": {"status":"partial","node_ids":["ai21","israel_ai_rnd_base"],"external_dependencies":[],"gap":"The map does not yet enumerate sector-specific AI companies and government products.","confidence":"medium"},
+    "talent_research": {"status":"partial","node_ids":["israel_ai_rnd_base","nvidia_israel_research","intel_israel","ai21"],"external_dependencies":[],"gap":"No quantified national talent measure is included.","confidence":"high"},
+    "capital_procurement": {"status":"partial","node_ids":["nimbus_government_cloud","israel_national_ai_program"],"external_dependencies":["foreign cloud and accelerator vendors"],"gap":null,"confidence":"high"},
+    "regulation_export_controls": {"status":"policy_only","node_ids":["israel_national_ai_program"],"external_dependencies":["foreign export-control regimes"],"gap":"Israel does not control external export regimes governing frontier chips.","confidence":"high"}
+  },
+  "research_completeness_score": 1.0,
+  "capability_presence_score_unweighted": 0.92,
+  "score_warning": "These scores measure map completeness and presence, not national AI power."
+}
