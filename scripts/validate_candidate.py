@@ -17,7 +17,7 @@ def sha256_bytes(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
 
-def load_candidate(manifest_path: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+def load_candidate(manifest_path: Path) -> tuple[dict[str, Any], dict[str, Any], bytes]:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     base_dir = manifest_path.parent
     canonical = manifest["canonical_dataset"]
@@ -49,7 +49,7 @@ def load_candidate(manifest_path: Path) -> tuple[dict[str, Any], dict[str, Any]]
             f"Decoded byte count mismatch: expected {expected_bytes}, got {len(raw)}"
         )
 
-    return manifest, json.loads(raw)
+    return manifest, json.loads(raw), raw
 
 
 def validate_structure(manifest: dict[str, Any], dataset: dict[str, Any]) -> list[str]:
@@ -144,9 +144,14 @@ def main() -> int:
         default="data/candidates/v0.4-rc1/manifest.json",
         type=Path,
     )
+    parser.add_argument(
+        "--output-json",
+        type=Path,
+        help="Optional path for the validated decoded canonical JSON.",
+    )
     args = parser.parse_args()
 
-    manifest, dataset = load_candidate(args.manifest)
+    manifest, dataset, raw = load_candidate(args.manifest)
     errors = validate_structure(manifest, dataset)
 
     if errors:
@@ -154,6 +159,11 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
+
+    if args.output_json:
+        args.output_json.parent.mkdir(parents=True, exist_ok=True)
+        args.output_json.write_bytes(raw)
+        print(f"Wrote validated canonical JSON to {args.output_json}")
 
     print(
         "Candidate validation passed: "
