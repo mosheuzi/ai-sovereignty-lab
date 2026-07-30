@@ -39,8 +39,8 @@ for (const edge of dataset.edges) {
 export function formatIdentifier(value?: string | null): string {
   if (!value) return "Not specified";
   return value
-    .replaceAll("_", " ")
-    .replace(/\b\w/g, (character) => character.toUpperCase());
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (character: string) => character.toUpperCase());
 }
 
 export function ecosystemLabel(ecosystem: Ecosystem | string): string {
