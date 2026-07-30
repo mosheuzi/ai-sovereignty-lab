@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "AI Sovereignty Lab v0.4-rc1 Validation Report",
+    "generated_on": "2026-07-30",
+    "candidate_version": "0.4-rc1"
+  },
+  "counts": {
+    "ecosystems": 7,
+    "nodes": 57,
+    "edges": 67,
+    "sources": 61,
+    "capability_layers": 13
+  },
+  "errors": [],
+  "warnings": [
+    "Government Decision 4255 full primary text remains unresolved; node is partially corroborated.",
+    "Tower Semiconductor detailed company-level audit remains open.",
+    "AI21 control-country verification remains pending."
+  ],
+  "isolated_nodes": [],
+  "publication_readiness": "pass_with_open_research_items",
+  "structural_validation": "pass",
+  "open_research_items": [
+    "Recover a stable official full-text source for Government Decision 4255.",
+    "Complete a primary-source audit for Tower Semiconductor before adding company-level process or capacity detail.",
+    "Verify private-company control and ownership fields where strict national-control claims are used.",
+    "Research Israel data-center grid connection capacity, water, cooling and backup-power constraints.",
+    "Manually review the user-supplied INSS article and map each strategic claim to a current primary source.",
+    "Complete ecosystem audits beyond Israel and selected U.S. nodes."
+  ]
+}
