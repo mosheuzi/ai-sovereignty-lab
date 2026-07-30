@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "title": "AI Sovereignty Lab v0.4 Source Audit, Batch 3",
+    "audit_date": "2026-07-30",
+    "status": "completed_with_open_items",
+    "scope": [
+      "Tower Semiconductor and Israeli fabrication",
+      "Israel AI data-center planning and grid constraints",
+      "Government Decision 4255 corroboration",
+      "Private-company control classification"
+    ]
+  },
+  "audits": [
+    {
+      "source_id": "SRC_TOWER_2026_20F",
+      "publisher": "Tower Semiconductor / U.S. Securities and Exchange Commission",
+      "title": "Tower Semiconductor Form 20-F for fiscal year 2025",
+      "date": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/928876/000117891326002318/zk2635149.htm",
+      "source_role": "securities_filing",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "Tower Semiconductor Ltd. is incorporated in Israel and lists its principal executive offices in Migdal HaEmek, Israel.",
+        "Tower ceased Fab 1 production operations during 2025 and consolidated selected production flows into Fab 2 in Migdal HaEmek.",
+        "Fab 2 remains operational in Migdal HaEmek and supports specialty semiconductor processes ranging from 0.35 to 0.13 micron.",
+        "Fab 2 capabilities include analog, RF, power, mixed-signal, CMOS image-sensor and related specialty process technologies.",
+        "Tower operates a wider international manufacturing network through subsidiaries and partnerships outside Israel."
+      ],
+      "limitations": [
+        "Tower's Israeli fab is a meaningful domestic fabrication capability, but it is not a leading-edge logic fab for frontier AI accelerators.",
+        "The filing does not support presenting Israel as domestically self-sufficient in EUV, HBM, advanced packaging or leading-edge accelerator fabrication.",
+        "The discontinued Fab 1 must not remain represented as an operational production fab."
+      ],
+      "required_dataset_action": "Add a Tower Semiconductor node in the Israel fabrication layer. Mark Fab 2 operational, Fab 1 production discontinued, and explicitly classify the capability as specialty semiconductor fabrication rather than leading-edge AI-chip manufacturing.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_KNESSET_AI_DATACENTER_LAW_JULY_2026",
+      "publisher": "The Knesset",
+      "title": "Committee approval of the bill promoting AI server farms as national infrastructure",
+      "date": "2026-07-06",
+      "url": "https://main.knesset.gov.il/news/pressreleases/pages/press06072026.aspx",
+      "source_role": "official_legislative_summary",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "The committee approved the Planning and Building Bill Amendment 168 for second and third readings.",
+        "The proposed definition covers an AI server farm whose electricity consumption for processing power is at least 50 MW.",
+        "The framework allows no more than ten plans per calendar year and no more than five plans in the Tel Aviv and Central districts combined.",
+        "Government authorization of a national-infrastructure plan is expected to consider contribution to Israeli AI use, electricity-system needs, energy efficiency and renewable energy."
+      ],
+      "limitations": [
+        "The source describes the bill as approved by committee and must not be represented as a final operational data-center capacity figure.",
+        "A planning pathway does not establish that grid connection, generation, cooling or accelerator supply is available."
+      ],
+      "required_dataset_action": "Add a planning-and-regulation node for large AI data centers. Use 50 MW only as the legislative definition threshold, not as the capacity of an existing facility.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_KNESSET_DATACENTER_GRID_NOV_2025",
+      "publisher": "The Knesset",
+      "title": "AI and advanced technologies subcommittee discussion on data-center electricity demand",
+      "date": "2025-11-25",
+      "url": "https://main.knesset.gov.il/News/PressReleases/pages/press25.11.25xcvs.aspx",
+      "source_role": "official_legislative_hearing_summary",
+      "verification_result": "verified_with_attribution_requirement",
+      "exact_supported_claims": [
+        "The hearing summary attributes to the Electricity Authority an estimate that data centers represented approximately 0.5 percent of Israeli electricity consumption in 2024 and could represent approximately 5 to 7 percent in 2030.",
+        "The hearing summary reports approximately 300 MVA of connected data-center capacity in 2024 and approximately 2,500 MVA of requested connections through 2030.",
+        "Approximately 40 percent of connection requests were reported as concentrated in the Central district and Greater Tel Aviv.",
+        "The Electricity Authority was reported as stating that the average construction time for a power station in Israel is approximately twelve years."
+      ],
+      "limitations": [
+        "These figures are reported through a Knesset hearing summary and should be attributed to the hearing and the presenting authority until the underlying Electricity Authority material is obtained.",
+        "A later July 2026 Knesset summary reports approximately 20,000 MW of connection requests. The difference may reflect rapid growth, scope or definition changes, and must be reconciled before a single current value is used.",
+        "MVA and MW are not interchangeable without assumptions about power factor."
+      ],
+      "required_dataset_action": "Represent grid connection as a constrained and uncertain capability. Preserve the 2025 figures as dated hearing-reported metrics, and create a research warning rather than replacing them with the unreconciled July 2026 figure.",
+      "confidence": "medium_high"
+    },
+    {
+      "source_id": "SRC_KNESSET_DECISION_4255_PRESENTATION",
+      "publisher": "The Knesset",
+      "title": "National AI Directorate presentation of the strategic program",
+      "date": "2026-07-09",
+      "url": "https://main.knesset.gov.il/news/pressreleases/pages/press09072026c.aspx",
+      "source_role": "official_legislative_corroboration",
+      "verification_result": "verified_as_corroboration",
+      "exact_supported_claims": [
+        "The National AI Directorate presented a national goal of access to 100,000 AI processors through private-sector construction with the state acting as a customer.",
+        "The presentation included promotion of AI data-center legislation, an ambition for an advanced chip plant, a national quantum computer and AI literacy and human-capital programs.",
+        "The committee discussion described infrastructure and human capital as top implementation priorities."
+      ],
+      "limitations": [
+        "This is an official Knesset summary of a presentation, not the full text of Government Decision 4255.",
+        "The 100,000-processor goal is a policy target, not deployed capacity or a funded procurement commitment.",
+        "Detailed claims about five-year access, specific laboratories, sovereign spectrum and government data still require the official decision text."
+      ],
+      "required_dataset_action": "Upgrade Decision 4255 from unsupported to officially corroborated policy direction, while keeping the full decision source status pending and all target metrics non-operational.",
+      "confidence": "high_for_corroborated_policy_direction"
+    },
+    {
+      "source_id": "SRC_AI21_ABOUT_CONTROL_LIMIT",
+      "publisher": "AI21",
+      "title": "About AI21",
+      "date": "accessed 2026-07-30",
+      "url": "https://www.ai21.com/about/",
+      "source_role": "official_company_profile",
+      "verification_result": "verified_with_control_limitation",
+      "exact_supported_claims": [
+        "AI21 identifies its founders and current leadership and describes itself as a developer of enterprise AI systems and foundation models.",
+        "The page lists Israeli and international founders, advisers and investors."
+      ],
+      "limitations": [
+        "The company page does not disclose a complete capitalization table, voting rights or verified country of ultimate control.",
+        "Headquarters, founder nationality or Israeli origin must not be treated as proof of domestic control."
+      ],
+      "required_dataset_action": "Keep AI21 as an Israel-origin and Israel-based model capability, but leave verified_control_country null and ownership_verification_status unverified_private_company.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_INSS_CHIPS_ISRAEL_CONTEXT",
+      "publisher": "Institute for National Security Studies",
+      "title": "User-supplied INSS publication on chips and Israel",
+      "date": "manual_metadata_review_pending",
+      "url": "https://www.inss.org.il/publication/chips-israel/",
+      "source_role": "secondary_strategic_analysis",
+      "verification_result": "retained_for_manual_review",
+      "allowed_use": [
+        "Strategic framing",
+        "Historical interpretation",
+        "Policy hypotheses",
+        "Identification of primary-source research questions"
+      ],
+      "not_sufficient_for": [
+        "Current fab operating status",
+        "Current ownership or control",
+        "Current investment totals",
+        "Current production technology without primary corroboration"
+      ],
+      "required_dataset_action": "Retain in contextual bibliography. Tower operational facts must use the 2026 SEC filing.",
+      "confidence": "high_in_source_role"
+    }
+  ],
+  "research_findings": [
+    {
+      "finding": "Israel has genuine domestic specialty-semiconductor fabrication through Tower Fab 2 and Intel Israel, but this does not close the leading-edge AI accelerator, HBM, EUV or advanced-packaging sovereignty gap.",
+      "status": "supported"
+    },
+    {
+      "finding": "The binding constraint for large Israeli AI data centers is not only planning permission. Grid connection, generation timing, location and demand concentration are material system constraints.",
+      "status": "supported_with_hearing_attribution"
+    },
+    {
+      "finding": "Government Decision 4255 is now officially corroborated at the strategic-direction level, but its full legal text remains missing from the research archive.",
+      "status": "partially_resolved"
+    },
+    {
+      "finding": "No defensible current national metric was found for water availability, cooling-water demand, backup generation or fuel-continuity requirements for Israeli AI data centers.",
+      "status": "open"
+    }
+  ],
+  "open_items": [
+    "Obtain the underlying Electricity Authority or Noga presentation used in the November 2025 and July 2026 Knesset discussions.",
+    "Reconcile 2,500 MVA of requested connections reported in November 2025 with approximately 20,000 MW reported in July 2026.",
+    "Recover the full official text or official archive copy of Government Decision 4255.",
+    "Manually capture the title, date and claims of the exact INSS chips-israel page.",
+    "Research site-level water, cooling, backup generation and fuel-continuity requirements from planning or environmental documents.",
+    "Audit the legal status of Amendment 168 after final Knesset passage and publication."
+  ]
+}
