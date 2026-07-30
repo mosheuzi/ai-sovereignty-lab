@@ -6,6 +6,7 @@ on:
       - "data/**"
       - "schema/**"
       - "scripts/validate_candidate.py"
+      - "scripts/build_rc2_candidate.py"
       - ".github/workflows/validate-research-data.yml"
   push:
     branches:
@@ -15,10 +16,11 @@ on:
       - "data/**"
       - "schema/**"
       - "scripts/validate_candidate.py"
+      - "scripts/build_rc2_candidate.py"
       - ".github/workflows/validate-research-data.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate-v0-4-candidate:
@@ -32,16 +34,35 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate candidate archive and graph references
+      - name: Validate v0.4-rc1 source candidate
+        run: python scripts/validate_candidate.py data/candidates/v0.4-rc1/manifest.json
+
+      - name: Build v0.4-rc2 candidate
+        run: python scripts/build_rc2_candidate.py
+
+      - name: Validate v0.4-rc2 candidate
         run: |
           python scripts/validate_candidate.py \
-            data/candidates/v0.4-rc1/manifest.json \
-            --output-json build-artifacts/ai-ecosystem-v0.4-rc1.json
+            data/candidates/v0.4-rc2/manifest.json \
+            --output-json build-artifacts/ai-ecosystem-v0.4-rc2.json
 
-      - name: Upload validated canonical dataset
+      - name: Upload validated v0.4-rc2 canonical dataset
         uses: actions/upload-artifact@v4
         with:
-          name: ai-ecosystem-v0.4-rc1-canonical
-          path: build-artifacts/ai-ecosystem-v0.4-rc1.json
+          name: ai-ecosystem-v0.4-rc2-canonical
+          path: build-artifacts/ai-ecosystem-v0.4-rc2.json
           if-no-files-found: error
           retention-days: 7
+
+      - name: Commit reproducible v0.4-rc2 candidate
+        if: github.event_name == 'push' && github.ref == 'refs/heads/research/v0.4-source-audit'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/candidates/v0.4-rc2
+          if git diff --cached --quiet; then
+            echo "No generated candidate changes to commit."
+          else
+            git commit -m "Build v0.4-rc2 candidate [skip ci]"
+            git push
+          fi
