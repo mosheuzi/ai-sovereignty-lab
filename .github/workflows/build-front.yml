@@ -25,7 +25,7 @@ on:
       - ".github/workflows/build-front.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -53,3 +53,19 @@ jobs:
           name: ai-sovereignty-front-mvp
           path: dist
           if-no-files-found: error
+
+      - name: Persist validated preview build
+        if: github.event_name == 'push'
+        run: |
+          rm -rf preview-dist
+          mkdir -p preview-dist
+          cp -R dist/. preview-dist/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview-dist
+          if git diff --cached --quiet; then
+            echo "Preview build is unchanged."
+          else
+            git commit -m "chore: persist validated front preview [skip ci]"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
