@@ -2,7 +2,7 @@
 
 ## Sprint 1 through Sprint 3
 
-Status: v0.4-rc1 is structurally validated; the v0.4-rc2 research patch is prepared but not yet applied.
+Status: v0.4-rc2 has been built reproducibly and validated in GitHub Actions.
 
 Completed:
 
@@ -16,35 +16,34 @@ Completed:
 - Israel energy-resilience correction
 - TSMC Arizona material correction
 - Intel U.S., Micron HBM and U.S. data-center electricity audits
-- Canonical v0.4-rc1 build candidate
-- Reproducible checksum, decompression and graph-reference CI validation
 - Tower Semiconductor 2026 SEC filing audit
 - Israel AI data-center planning-framework audit
 - Israel data-center grid-connection constraint audit
 - Private-company control methodology applied to AI21
-- Machine-readable v0.4-rc2 patch plan
-- Sprint 3 findings and PR summary
+- Canonical v0.4-rc2 build candidate
+- Direct front-end JSON plus checksummed multipart archive
+- Reproducible checksum, decompression, graph-reference and domain-rule CI validation
 
 Current validated candidate:
 
 - 7 ecosystems
 - 13 capability layers
-- 57 nodes
-- 67 edges
-- 61 sources
+- 60 nodes
+- 75 edges
+- 66 sources
 - 0 structural errors
 - 0 isolated nodes
 
-Sprint 3 material findings:
+Sprint 3 material findings now applied:
 
-- Tower Fab 2 is a real operational specialty-semiconductor fabrication capability in Israel.
-- Tower Fab 1 production ceased in 2025 and must not be shown as operational.
-- Tower does not close the leading-edge AI logic, HBM, EUV or advanced-packaging gap.
-- The proposed 50 MW AI data-center threshold is a legislative definition, not existing capacity.
-- Grid connection must be modeled independently from planning approval and physical data-center presence.
-- Knesset hearing summaries report conflicting requested-connection totals that require reconciliation through underlying Electricity Authority or Noga material.
-- Government Decision 4255 is officially corroborated at the policy-direction level, but the full official legal text remains pending.
-- AI21 can be classified as an Israel-origin and Israel-based model capability, but verified country of control remains unconfirmed.
+- Tower Fab 2 is represented as an operational specialty-semiconductor fabrication capability in Israel.
+- Tower Fab 1 production ceased in 2025 and is not shown as operational.
+- Tower is explicitly excluded as evidence of leading-edge AI logic, HBM, EUV or complete advanced-packaging sovereignty.
+- The proposed 50 MW AI data-center threshold is represented as a legislative definition, not existing capacity.
+- Grid connection is modeled independently from planning approval and physical data-center presence.
+- Conflicting connection-request figures remain separate, dated and unresolved.
+- Government Decision 4255 is officially corroborated at the policy-direction level, while the full official legal text remains pending.
+- AI21 is represented as an Israel-origin and Israel-based model capability, while verified country of control remains null.
 
 Pending research:
 
