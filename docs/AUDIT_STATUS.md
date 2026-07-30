@@ -23,6 +23,7 @@ Completed:
 - Israel data-center grid-connection constraint audit
 - Private-company control methodology applied to AI21
 - Machine-readable v0.4-rc2 patch plan
+- Sprint 3 findings and PR summary
 
 Current validated candidate:
 
