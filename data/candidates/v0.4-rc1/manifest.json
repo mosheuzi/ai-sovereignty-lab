@@ -6,10 +6,14 @@
     "encoding": "base64",
     "compression": "gzip",
     "parts": [
-      "canonical/ai-ecosystem-v0.4-rc1.json.gz.b64.part-01",
-      "canonical/ai-ecosystem-v0.4-rc1.json.gz.b64.part-02",
-      "canonical/ai-ecosystem-v0.4-rc1.json.gz.b64.part-03",
-      "canonical/ai-ecosystem-v0.4-rc1.json.gz.b64.part-04"
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-01",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-02",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-03",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-04",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-05",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-06",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-07",
+      "canonical-small/ai-ecosystem-v0.4-rc1.json.gz.b64.chunk-08"
     ],
     "gzip_sha256": "869ed983591ca4353969669bc592b06788ac2b1766561fc294e568efb0d7faf2",
     "decoded_json_sha256": "27beb48432c3cb3b4a84a58795a7ce3be2ecc4f75f81676e53ea611006c7d18c",
@@ -17,7 +21,7 @@
     "decoded_bytes": 188174
   },
   "validation_report": "validation-report-v0.4-rc1.json",
-  "changelog": "CHANGELOG-v0.4-rc1.md",
+  "changelog": "CHANGELOG.md",
   "counts": {
     "ecosystems": 7,
     "nodes": 57,
