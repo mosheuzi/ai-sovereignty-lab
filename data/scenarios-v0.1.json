@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "title": "AI Sovereignty Lab Scenario Catalogue",
+    "version": "0.1",
+    "as_of": "2026-07-30",
+    "status": "research_draft",
+    "purpose": "Define transparent browser-executable dependency scenarios without predicting geopolitical events."
+  },
+  "result_states": [
+    "unaffected",
+    "degraded",
+    "temporarily_unavailable",
+    "strategically_blocked",
+    "unknown_due_to_missing_research"
+  ],
+  "scenarios": [
+    {
+      "id": "loss_frontier_accelerator_access",
+      "label": "Loss of access to frontier accelerators",
+      "trigger_type": "technology_and_export_access",
+      "disabled_capabilities": [
+        "advanced_ai_accelerators"
+      ],
+      "questions": [
+        "Which model labs can continue inference on existing installed capacity?",
+        "Which ecosystems can train or fine-tune without new imported accelerators?",
+        "Which domestic or allied substitutes exist, and at what performance level?",
+        "How long can installed hardware operate without replacement parts and software support?"
+      ],
+      "initial_impact_rules": [
+        {
+          "condition": "ecosystem capability accelerators_memory is import_dependent",
+          "result": "strategically_blocked"
+        },
+        {
+          "condition": "ecosystem has installed local capacity but no domestic supply path",
+          "result": "degraded"
+        },
+        {
+          "condition": "replacement and installed-base data are missing",
+          "result": "unknown_due_to_missing_research"
+        }
+      ]
+    },
+    {
+      "id": "hbm_supply_disruption",
+      "label": "High-bandwidth memory supply disruption",
+      "trigger_type": "component_supply",
+      "disabled_capabilities": [
+        "sk_hynix",
+        "selected_hbm_supply"
+      ],
+      "questions": [
+        "Which accelerator deployments depend on the affected memory generation?",
+        "Can alternative memory suppliers qualify in time?",
+        "Does local accelerator ownership matter when memory supply is external?"
+      ],
+      "initial_impact_rules": [
+        {
+          "condition": "edge from HBM supplier to accelerator layer has low substitutability",
+          "result": "degraded"
+        },
+        {
+          "condition": "no qualified alternate supply is represented",
+          "result": "strategically_blocked"
+        }
+      ]
+    },
+    {
+      "id": "euv_export_restriction",
+      "label": "Restriction on leading-edge lithography equipment",
+      "trigger_type": "equipment_and_export_control",
+      "disabled_capabilities": [
+        "asml_euv_access"
+      ],
+      "questions": [
+        "Which fabs can continue current production but cannot expand or advance process nodes?",
+        "Which equipment, service and spare-part dependencies remain even when machines are already installed?",
+        "How long before the restriction affects accelerator availability?"
+      ],
+      "initial_impact_rules": [
+        {
+          "condition": "fabrication node depends on EUV and has no substitute equipment path",
+          "result": "degraded"
+        },
+        {
+          "condition": "scenario duration exceeds maintenance or expansion tolerance",
+          "result": "strategically_blocked"
+        }
+      ]
+    },
+    {
+      "id": "hyperscaler_control_plane_loss",
+      "label": "Loss of access to a foreign hyperscaler control plane",
+      "trigger_type": "vendor_and_jurisdiction",
+      "disabled_capabilities": [
+        "selected_foreign_cloud_provider"
+      ],
+      "questions": [
+        "Can locally hosted workloads continue without the foreign control plane?",
+        "Who controls identities, encryption keys, billing and service activation?",
+        "Can workloads move to another local provider or self-hosted infrastructure?",
+        "Which managed services have no portable replacement?"
+      ],
+      "initial_impact_rules": [
+        {
+          "condition": "capability status is foreign_owned_locally_hosted and no alternate provider exists",
+          "result": "temporarily_unavailable"
+        },
+        {
+          "condition": "portable workload and tested alternate provider exist",
+          "result": "degraded"
+        },
+        {
+          "condition": "managed proprietary service is essential and nonportable",
+          "result": "strategically_blocked"
+        }
+      ]
+    },
+    {
+      "id": "data_center_power_constraint",
+      "label": "Data-center power and grid constraint",
+      "trigger_type": "energy_and_grid",
+      "disabled_capabilities": [
+        "selected_power_or_grid_capacity"
+      ],
+      "questions": [
+        "Which facilities lose power or cannot expand?",
+        "Which workloads can be prioritized or shifted?",
+        "Is backup generation sufficient for continuous AI operation?",
+        "Does the ecosystem control fuel, generation, grid connection and cooling?"
+      ],
+      "initial_impact_rules": [
+        {
+          "condition": "data-center node has a single critical power dependency",
+          "result": "temporarily_unavailable"
+        },
+        {
+          "condition": "planned compute cannot obtain grid connection",
+          "result": "strategically_blocked"
+        },
+        {
+          "condition": "multi-site capacity and tested workload shifting exist",
+          "result": "degraded"
+        }
+      ]
+    },
+    {
+      "id": "submarine_connectivity_disruption",
+      "label": "International submarine connectivity disruption",
+      "trigger_type": "network_infrastructure",
+      "disabled_capabilities": [
+        "selected_submarine_routes"
+      ],
+      "questions": [
+        "Which cloud, API and data-transfer paths depend on the affected routes?",
+        "Which alternate landing points and terrestrial routes are available?",
+        "Can domestic services continue in an isolated national mode?",
+        "How much model and application functionality requires real-time foreign access?"
+      ],
+      "initial_impact_rules": [
+        {
+          "condition": "multiple independent routes remain available",
+          "result": "degraded"
+        },
+        {
+          "condition": "critical service requires a foreign API and all relevant routes fail",
+          "result": "temporarily_unavailable"
+        },
+        {
+          "condition": "route and capacity data are missing",
+          "result": "unknown_due_to_missing_research"
+        }
+      ]
+    }
+  ],
+  "implementation_rule": "Every scenario result must display the dependency path and the evidence or assumption used. No scenario may be described as a forecast."
+}
