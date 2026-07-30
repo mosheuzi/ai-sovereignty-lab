@@ -1,35 +1,29 @@
 {
   "dataset_version": "0.3-capability-stacks",
   "as_of": "2026-07-29",
+  "format": "gzip-base64-multipart",
+  "canonical_dataset": {
+    "encoding": "base64",
+    "compression": "gzip",
+    "parts": [
+      "canonical/ai-ecosystem-v0.3.json.gz.b64.part-01",
+      "canonical/ai-ecosystem-v0.3.json.gz.b64.part-02",
+      "canonical/ai-ecosystem-v0.3.json.gz.b64.part-03",
+      "canonical/ai-ecosystem-v0.3.json.gz.b64.part-04"
+    ],
+    "gzip_sha256": "43bda5e1726464b2502234c944475c22ca4b2abfb3dfe1426244ad107e0180ae",
+    "decoded_content_type": "application/json"
+  },
   "config": "config.json",
   "sources": "sources.json",
   "validation_report": "validation-report-v0.3.json",
   "audit": "audit.json",
-  "ecosystems": [
-    "ecosystems/us.json",
-    "ecosystems/israel.json",
-    "ecosystems/china.json",
-    "ecosystems/east-asia-semiconductors.json",
-    "ecosystems/europe.json",
-    "ecosystems/gulf.json",
-    "ecosystems/india.json"
-  ],
-  "nodes": [
-    "nodes/global.json",
-    "nodes/china.json",
-    "nodes/europe.json",
-    "nodes/east-asia-semiconductors.json",
-    "nodes/us.json",
-    "nodes/gulf.json",
-    "nodes/india.json",
-    "nodes/israel.json"
-  ],
-  "edges": [
-    "edges/001-010.json",
-    "edges/011-020.json",
-    "edges/021-030.json",
-    "edges/031-040.json",
-    "edges/041-050.json",
-    "edges/051-060.json"
-  ]
+  "expanded_files": {
+    "status": "partial",
+    "available": [
+      "ecosystems/us.json",
+      "ecosystems/israel.json"
+    ],
+    "note": "The canonical archive contains the complete dataset. Expanded contribution-friendly files will be generated in the implementation phase."
+  }
 }
