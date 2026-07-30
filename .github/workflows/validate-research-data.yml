@@ -1,0 +1,36 @@
+name: Validate research data
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "schema/**"
+      - "scripts/validate_candidate.py"
+      - ".github/workflows/validate-research-data.yml"
+  push:
+    branches:
+      - main
+      - "research/**"
+    paths:
+      - "data/**"
+      - "schema/**"
+      - "scripts/validate_candidate.py"
+      - ".github/workflows/validate-research-data.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-v0-4-candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate candidate archive and graph references
+        run: python scripts/validate_candidate.py data/candidates/v0.4-rc1/manifest.json
