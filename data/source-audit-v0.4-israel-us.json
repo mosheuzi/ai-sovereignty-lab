@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "title": "AI Sovereignty Lab v0.4 Source Audit, Sprint 1",
+    "scope": [
+      "Israel capability stack",
+      "Selected United States dependencies"
+    ],
+    "audit_date": "2026-07-30",
+    "status": "in_progress",
+    "purpose": "Verify exact claims, identify overreach and define required dataset corrections before the interactive MVP."
+  },
+  "summary": {
+    "sources_reviewed": 10,
+    "verified_without_material_change": 7,
+    "verified_with_scope_correction": 2,
+    "requires_replacement_or_additional_primary_source": 1,
+    "material_findings": [
+      "Local cloud-region presence must remain classified separately from domestic ownership and full sovereignty.",
+      "Azure Israel Central is verified as supporting Availability Zones, but this source does not support an exact zone count.",
+      "Google Cloud documentation supports three Tel Aviv zones and limited GPU availability, but not frontier-scale local training capacity.",
+      "AI21 product pages support Jamba and self-hosting, but a separate source is required for precise corporate ownership classification.",
+      "The current Government Decision 4255 URL did not resolve through the audit process and needs a stable official replacement or archived copy."
+    ]
+  },
+  "audits": [
+    {
+      "source_id": "SRC_AWS_ISRAEL_REGION",
+      "publisher": "Amazon Web Services",
+      "url": "https://aws.amazon.com/local/israel/",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "The AWS Israel, Tel Aviv Region is open.",
+        "The region consists of three Availability Zones.",
+        "AWS states that data can be stored in Israel.",
+        "AWS plans to invest up to ILS 26.6 billion in the region from 2023 through 2037."
+      ],
+      "limitations": [
+        "The page does not establish domestic Israeli ownership or full legal and supply-chain sovereignty.",
+        "The investment figure is a company plan and must not be presented as completed expenditure."
+      ],
+      "required_dataset_action": "Keep foreign_owned_locally_hosted. Preserve three-zone metric. Label the investment as planned maximum through 2037.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_GCP_TEL_AVIV_REGION",
+      "publisher": "Google Cloud",
+      "url": "https://cloud.google.com/blog/products/infrastructure/new-google-cloud-region-in-israel-is-now-open",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved_via_official_search_index",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "The Google Cloud region in Tel Aviv is open.",
+        "The region identifier is me-west1.",
+        "Google Cloud was selected to provide cloud services to Israeli government ministries."
+      ],
+      "limitations": [
+        "The announcement does not establish national ownership or independence from Google's control plane and global supply chain."
+      ],
+      "required_dataset_action": "No material correction. Retain foreign_owned_locally_hosted classification.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_GCP_TEL_AVIV_COMPUTE",
+      "publisher": "Google Cloud",
+      "url": "https://docs.cloud.google.com/compute/docs/regions-zones",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified_with_scope_correction",
+      "exact_supported_claims": [
+        "The Tel Aviv region includes me-west1-a, me-west1-b and me-west1-c.",
+        "The documentation lists GPU-capable machine availability in the region, including A2 and T4 options in selected zones."
+      ],
+      "unsupported_or_overextended_claims": [
+        "The source does not establish frontier-scale local training capacity.",
+        "The source does not establish availability of the latest NVIDIA accelerator generations in Israel."
+      ],
+      "required_dataset_action": "Retain three zones and GPU-capable wording. Add an explicit limitation that the evidence does not prove frontier-scale local compute.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_AZURE_ISRAEL_CENTRAL",
+      "publisher": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified_with_scope_correction",
+      "exact_supported_claims": [
+        "Israel Central is listed among Azure regions supporting Availability Zones."
+      ],
+      "unsupported_or_overextended_claims": [
+        "This source does not state an exact number of zones for Israel Central.",
+        "This source does not establish specific frontier AI accelerator availability in the region."
+      ],
+      "required_dataset_action": "Keep Availability Zone support. Do not add a three-zone metric without a more specific Microsoft source.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_NIMBUS_OFFICIAL",
+      "publisher": "Government Procurement Administration, Government of Israel",
+      "url": "https://mr.gov.il/ilgstorefront/en/news/details/111222",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "Nimbus is a multi-year, large-scale government project.",
+        "AWS and Google were selected to provide public cloud services to the Government of Israel.",
+        "The official description includes five layers: public cloud, cloud policy and CCoE, migration and integration, monitoring and FinOps, and a third-party cloud marketplace."
+      ],
+      "limitations": [
+        "Government procurement and governance do not transfer ownership of the hyperscaler technology stack to Israel."
+      ],
+      "required_dataset_action": "No material correction. Use Nimbus as a procurement and governance capability, not as proof of fully sovereign cloud ownership.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_AI21_JAMBA",
+      "publisher": "AI21",
+      "url": "https://www.ai21.com/jamba/",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "AI21 publishes the Jamba family of open foundation models.",
+        "The page describes self-hosted and cloud deployment options.",
+        "The current page includes Jamba2 model variants."
+      ],
+      "unsupported_or_overextended_claims": [
+        "The product page alone does not prove a precise nationality or ownership distribution for the company.",
+        "Self-hosting does not eliminate dependence on imported accelerators, software dependencies or maintenance expertise."
+      ],
+      "required_dataset_action": "Retain AI21 as an Israel-based model capability. Add a separate corporate source before using domestically_owned as a strict ownership claim.",
+      "confidence": "high_for_product_claims_medium_for_ownership"
+    },
+    {
+      "source_id": "SRC_INTEL_ISRAEL",
+      "publisher": "Intel",
+      "url": "https://www.intel.com/content/www/us/en/corporate-responsibility/intel-in-israel.html",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "Intel describes Israel as a key global manufacturing and R&D site.",
+        "Intel identifies Kiryat Gat as its most advanced manufacturing facility in Israel.",
+        "Intel identifies Haifa as a processor and AI development center and Petah Tikva as a communications and AI solutions development center."
+      ],
+      "limitations": [
+        "The facilities are located and operated in Israel but remain part of a United States-headquartered corporate structure.",
+        "Local fabrication remains dependent on global semiconductor equipment, materials and corporate roadmaps."
+      ],
+      "required_dataset_action": "No material correction. Preserve foreign_owned_locally_operated and separate local strategic value from national ownership.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_NVIDIA_ISRAEL_RESEARCH",
+      "publisher": "NVIDIA Research",
+      "url": "https://research.nvidia.com/labs/par/",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "resolved",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "NVIDIA operates a Tel Aviv research lab described as the NVIDIA Research Israel AI Lab.",
+        "The lab researches deep learning, computer vision, reinforcement learning, perception, action and reasoning."
+      ],
+      "limitations": [
+        "A research lab is a talent and R&D capability, not domestic ownership of NVIDIA models, accelerators or manufacturing."
+      ],
+      "required_dataset_action": "No material correction. Keep the node in talent_research and foreign_owned_locally_operated.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_ISRAEL_DECISION_4255",
+      "publisher": "Government of Israel",
+      "url": "https://www.gov.il/he/pages/dec4255-2026",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "did_not_resolve_in_audit",
+      "verification_result": "requires_replacement_or_archived_primary_source",
+      "corroborating_source": {
+        "publisher": "The Knesset",
+        "url": "https://main.knesset.gov.il/News/PressReleases/pages/press09072026c.aspx",
+        "supported_claim": "A Knesset committee discussed the government decision of 16 June 2026 and the national AI strategy, including the stated direction of access equivalent to 100,000 AI processors."
+      },
+      "limitations": [
+        "The Knesset press release is useful corroboration but is not a substitute for the full binding text of the government decision.",
+        "The current dataset must not rely on an unresolved URL as its only primary evidence."
+      ],
+      "required_dataset_action": "Locate a stable official decision page, downloadable official document or archived government copy before v0.4 release. Until then mark detailed Decision 4255 claims as source_pending rather than fully audited.",
+      "confidence": "high_in_problem_identification"
+    },
+    {
+      "source_id": "SRC_US_DATA_CENTER_ENERGY",
+      "publisher": "United States Department of Energy",
+      "url": "https://www.energy.gov/articles/doe-releases-new-report-evaluating-increase-electricity-demand-data-centers",
+      "accessed_on": "2026-07-30",
+      "resolution_status": "previously_verified_primary_source_pending_line_level_reaudit",
+      "verification_result": "retained_for_next_audit_batch",
+      "exact_supported_claims_in_current_dataset": [
+        "United States data centers consumed approximately 4.4 percent of United States electricity in 2023.",
+        "The cited projection range for 2028 is 6.7 percent to 12 percent."
+      ],
+      "required_dataset_action": "Reopen the linked report in the next audit batch, capture the exact table or passage and confirm forecast framing before v0.4 release.",
+      "confidence": "medium_pending_line_level_reaudit"
+    }
+  ],
+  "next_actions": [
+    "Replace or archive the official Government Decision 4255 source.",
+    "Add a corporate-registry or equivalent primary source for AI21 ownership classification.",
+    "Audit Israeli electricity-generation data and remove the 74 percent metric if the exact official source cannot be recovered.",
+    "Perform line-level audits for United States energy, TSMC Arizona, Intel United States manufacturing and Micron HBM claims.",
+    "Patch the canonical dataset only after the corrections are consolidated into a reproducible v0.4 build."
+  ]
+}

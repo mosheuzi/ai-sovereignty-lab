@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "title": "AI Sovereignty Lab v0.4 Source Audit, Batch 2",
+    "audit_date": "2026-07-30",
+    "status": "completed_with_open_items",
+    "scope": [
+      "Israel semiconductor capability",
+      "Israel energy resilience",
+      "United States semiconductor manufacturing",
+      "United States data-center electricity demand"
+    ]
+  },
+  "audits": [
+    {
+      "source_id": "CANDIDATE_INSS_CHIPS_ISRAEL",
+      "publisher": "Institute for National Security Studies",
+      "url": "https://www.inss.org.il/publication/chips-israel/",
+      "source_role": "secondary_strategic_analysis",
+      "resolution_status": "automated_fetch_blocked_403",
+      "verification_result": "manual_review_required",
+      "allowed_use": [
+        "Strategic framing",
+        "Research hypotheses",
+        "Policy alternatives",
+        "Identification of claims requiring primary-source verification"
+      ],
+      "prohibited_use": [
+        "Current company ownership",
+        "Current fab status",
+        "Current investment totals",
+        "Current market-share metrics without newer primary evidence"
+      ],
+      "related_accessible_inss_publications": [
+        "https://www.inss.org.il/publication/israel-chip-crisis/",
+        "https://www.inss.org.il/publication/chip-war/",
+        "https://www.inss.org.il/publication/technology-memorandum/"
+      ],
+      "material_warning": "An accessible 2022 INSS publication described Intel's proposed Tower Semiconductor acquisition as a recent acquisition. Intel and Tower later terminated the transaction in August 2023. This demonstrates why INSS material should be used for strategic analysis, not as the final source for current operational facts.",
+      "required_dataset_action": "Add INSS as a contextual bibliography source only. Do not attach current numeric metrics to it until the exact user-supplied page is manually reviewed and each claim is checked against a primary source.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_ISRAEL_INNOVATION_AUTHORITY_CHIP_INDUSTRY_2025",
+      "publisher": "Israel Innovation Authority",
+      "url": "https://innovationisrael.org.il/israeli-chip-industry/",
+      "source_role": "official_sector_overview",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "The Israeli semiconductor industry employed approximately 45,000 people across approximately 200 companies as of the publication.",
+        "Approximately one quarter of the companies were multinational development centers, employing approximately 70 percent of sector workers.",
+        "Approximately 75 percent of Israeli semiconductor-sector employees worked in chip design.",
+        "Approximately 16 percent worked in metrology and inspection.",
+        "The publication identified two semiconductor fabs in Israel: Tower in Migdal HaEmek and Intel in Kiryat Gat."
+      ],
+      "limitations": [
+        "The figures are an official sector overview, but several are rounded estimates.",
+        "The source does not establish that Israel controls the complete upstream equipment, materials, advanced packaging, HBM or leading-edge accelerator supply chain."
+      ],
+      "required_dataset_action": "Add an Israel semiconductor ecosystem aggregate node with dated approximate metrics. Split design, metrology and fabrication into separate capability components.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_ISRAEL_CHIPS_JU_2026",
+      "publisher": "Israel Innovation Authority",
+      "url": "https://innovationisrael.org.il/en/calls_for_proposal/chips-ju-2026/",
+      "source_role": "official_program_announcement",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "Israeli companies and academic researchers may participate in joint semiconductor R&D programs under the Chips Joint Undertaking.",
+        "The 2026 Israeli allocation is EUR 3.5 million.",
+        "Maximum combined funding rates are up to 66 percent for industrial corporations and up to 80 percent for academic institutions."
+      ],
+      "limitations": [
+        "Program participation represents allied research access and collaboration, not sovereign fabrication capacity.",
+        "The allocation is not a commitment to award the full amount."
+      ],
+      "required_dataset_action": "Represent Chips JU participation as allied_access under research, capital and procurement. Do not render it as domestic manufacturing sovereignty.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_ISRAEL_STATE_COMPTROLLER_GAS_2026",
+      "publisher": "State Comptroller of Israel",
+      "url": "https://library.mevaker.gov.il/sites/DigitalLibrary/Pages/Reports/10593-6.aspx",
+      "source_role": "government_audit",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "More than 70 percent of Israel's electricity was generated using natural gas in 2024.",
+        "Israel had zero BCM of natural-gas storage capacity at the time of the audit.",
+        "Forty-nine percent of the natural gas produced in Israel in 2024 was exported to Egypt and Jordan.",
+        "The audit states that proven reserves were retrospectively updated to approximately 870 BCM in November 2025.",
+        "The audit warns that reserves may be depleted in approximately 25 years under the current trajectory."
+      ],
+      "required_dataset_action": "Replace the unaudited 74 percent 2025 metric with more-than-70-percent in 2024. Add zero storage capacity and long-term depletion risk. Reduce the supply-chain sovereignty characterization from simple domestic energy strength to domestic resource with resilience constraints.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_TSMC_ARIZONA_CURRENT",
+      "publisher": "TSMC",
+      "url": "https://www.tsmc.com/static/abouttsmcaz/index.htm",
+      "source_role": "official_company_infrastructure_page",
+      "verification_result": "verified_with_material_correction",
+      "exact_supported_claims": [
+        "TSMC's current stated total United States investment plan is USD 165 billion, not USD 265 billion.",
+        "The Arizona plan includes six wafer fabs, two advanced-packaging facilities and an R&D center.",
+        "The first fab began N4 high-volume production in Q4 2024.",
+        "The second fab targets N3 volume production in the second half of 2027.",
+        "The third fab targets N2 and A16 production by the end of the decade."
+      ],
+      "required_dataset_action": "Correct USD 265 billion to USD 165 billion. Keep the first fab operational and all later fabs and packaging facilities planned or under development.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_INTEL_US_CHIPS_FINAL",
+      "publisher": "Intel",
+      "url": "https://newsroom.intel.com/press-kit/us-chips-act-funding-intel",
+      "source_role": "official_company_and_government_award_summary",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "Intel and the United States Department of Commerce finalized up to USD 7.86 billion in direct CHIPS Act funding in November 2024.",
+        "The funding supports manufacturing and advanced-packaging projects in Arizona, New Mexico, Ohio and Oregon.",
+        "Intel's broader announced United States investment plans exceed USD 100 billion."
+      ],
+      "required_dataset_action": "Keep Intel United States manufacturing as operational-and-expanding. Separate final government award, company investment plans and site operational status.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_MICRON_US_HBM_CURRENT",
+      "publisher": "Micron",
+      "url": "https://investors.micron.com/node/48921",
+      "source_role": "official_company_investment_announcement",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "Micron announced an approximately USD 200 billion United States manufacturing and R&D vision.",
+        "The plan includes future advanced HBM packaging in the United States.",
+        "The HBM packaging capability is planned after completion of the second Idaho fab and is not yet operational."
+      ],
+      "required_dataset_action": "Retain under_development status and prevent the UI from displaying United States HBM packaging as operational.",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC_US_DATA_CENTER_ENERGY_LINE_AUDIT",
+      "publisher": "United States Department of Energy",
+      "url": "https://www.energy.gov/articles/doe-releases-new-report-evaluating-increase-electricity-demand-data-centers",
+      "source_role": "government_report_summary",
+      "verification_result": "verified",
+      "exact_supported_claims": [
+        "United States data centers consumed approximately 4.4 percent of total United States electricity in 2023.",
+        "The projected 2028 range is approximately 6.7 to 12 percent.",
+        "Electricity use increased from 58 TWh in 2014 to 176 TWh in 2023 and is projected at 325 to 580 TWh in 2028."
+      ],
+      "required_dataset_action": "Retain the current percentages and add TWh values. Mark all 2028 values as forecasts.",
+      "confidence": "high"
+    }
+  ],
+  "open_items": [
+    "Recover a stable official copy of Government Decision 4255.",
+    "Manually inspect the user-supplied INSS URL and record its exact title and publication date.",
+    "Replace strict domestically_owned classification for private companies with separate headquarters, origin and verified control fields.",
+    "Audit Tower Semiconductor through a primary company or securities source before adding a detailed fabrication node.",
+    "Research Israel grid connection capacity, water, backup generation and data-center power availability."
+  ]
+}

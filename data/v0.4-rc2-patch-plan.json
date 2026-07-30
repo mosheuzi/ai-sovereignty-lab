@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "title": "Dataset v0.4-rc2 Patch Plan",
+    "created_on": "2026-07-30",
+    "status": "proposed_not_applied",
+    "based_on": [
+      "data/source-audit-v0.4-batch-3.json",
+      "data/candidates/v0.4-rc1/manifest.json"
+    ]
+  },
+  "operations": [
+    {
+      "operation": "add_node",
+      "node_id": "tower_semiconductor_israel",
+      "proposed_fields": {
+        "label": "Tower Semiconductor Israel",
+        "ecosystem": "Israel",
+        "country": "Israel",
+        "capability_layer": "semiconductor_fabrication_packaging",
+        "type": "specialty_semiconductor_foundry",
+        "capability_status": "domestically_headquartered_operational",
+        "company_origin_country": "Israel",
+        "headquarters_country": "Israel",
+        "verified_control_country": null,
+        "ownership_verification_status": "public_company_control_not_reduced_to_single_country",
+        "physical_locations": [
+          "Migdal HaEmek, Israel"
+        ],
+        "status": "operational",
+        "capabilities": [
+          "specialty analog",
+          "RF",
+          "power semiconductor processes",
+          "mixed signal",
+          "CMOS image sensors"
+        ],
+        "operational_facilities": [
+          "Fab 2"
+        ],
+        "discontinued_production_facilities": [
+          "Fab 1 production ceased in 2025"
+        ],
+        "not_supported_as": [
+          "leading-edge AI accelerator fabrication",
+          "HBM manufacturing",
+          "EUV lithography capability",
+          "complete advanced-packaging sovereignty"
+        ]
+      },
+      "source_ids": [
+        "SRC_TOWER_2026_20F"
+      ]
+    },
+    {
+      "operation": "add_edges",
+      "edges": [
+        {
+          "from": "semiconductor_materials_chemicals",
+          "to": "tower_semiconductor_israel",
+          "category": "fabrication_dependency",
+          "claim_class": "analytical_inference",
+          "status": "operational",
+          "label": "Specialty fabrication depends on globally sourced equipment, materials and chemicals"
+        },
+        {
+          "from": "tower_semiconductor_israel",
+          "to": "israel_semiconductor_ecosystem",
+          "category": "aggregate_membership",
+          "claim_class": "observed",
+          "status": "operational",
+          "label": "Domestic-headquartered specialty foundry capability"
+        }
+      ],
+      "source_ids": [
+        "SRC_TOWER_2026_20F",
+        "SRC_USGS_2026"
+      ]
+    },
+    {
+      "operation": "add_node",
+      "node_id": "israel_ai_datacenter_planning_framework",
+      "proposed_fields": {
+        "label": "Israel AI Data Center Planning Framework",
+        "ecosystem": "Israel",
+        "country": "Israel",
+        "capability_layer": "regulation_export_controls",
+        "type": "planning_and_infrastructure_policy",
+        "capability_status": "under_legislative_development",
+        "status": "legislative_process",
+        "definition_threshold": {
+          "value": 50,
+          "unit": "MW",
+          "meaning": "proposed electricity-consumption threshold for processing power in the legislative definition, not existing facility capacity"
+        },
+        "planning_limits": {
+          "national_plans_per_year_max": 10,
+          "tel_aviv_and_central_plans_per_year_combined_max": 5
+        },
+        "required_considerations": [
+          "electricity-system needs",
+          "energy efficiency",
+          "renewable energy",
+          "contribution to Israeli AI development",
+          "geographic distribution"
+        ]
+      },
+      "source_ids": [
+        "SRC_KNESSET_AI_DATACENTER_LAW_JULY_2026"
+      ]
+    },
+    {
+      "operation": "add_node",
+      "node_id": "israel_datacenter_grid_connection_constraint",
+      "proposed_fields": {
+        "label": "Israel Data Center Grid Connection Constraint",
+        "ecosystem": "Israel",
+        "country": "Israel",
+        "capability_layer": "energy_and_grid",
+        "type": "grid_capacity_constraint",
+        "capability_status": "constrained",
+        "status": "operational_constraint",
+        "dated_hearing_metrics": [
+          {
+            "name": "data_center_share_of_electricity_consumption",
+            "value": 0.5,
+            "unit": "percent_approx",
+            "as_of": 2024,
+            "attribution": "reported by the Electricity Authority in a Knesset hearing summary"
+          },
+          {
+            "name": "projected_share_of_electricity_consumption",
+            "value_range": [5, 7],
+            "unit": "percent_approx",
+            "as_of": 2030,
+            "status": "forecast",
+            "attribution": "reported by the Electricity Authority in a Knesset hearing summary"
+          },
+          {
+            "name": "connected_capacity",
+            "value": 300,
+            "unit": "MVA_approx",
+            "as_of": 2024,
+            "attribution": "reported by the Electricity Authority in a Knesset hearing summary"
+          },
+          {
+            "name": "requested_connections",
+            "value": 2500,
+            "unit": "MVA_approx",
+            "through": 2030,
+            "attribution": "reported by the Electricity Authority in a Knesset hearing summary",
+            "reconciliation_status": "conflicts_with_later_hearing_summary"
+          }
+        ],
+        "limitations": [
+          "Later Knesset reporting cites approximately 20,000 MW of requests; the values must be reconciled before presenting a single current metric.",
+          "MVA and MW must not be directly compared without power-factor assumptions.",
+          "The underlying regulator presentation has not yet been archived in the repository."
+        ]
+      },
+      "source_ids": [
+        "SRC_KNESSET_DATACENTER_GRID_NOV_2025",
+        "SRC_KNESSET_DECISION_4255_PRESENTATION"
+      ]
+    },
+    {
+      "operation": "update_node",
+      "node_id": "israel_national_ai_program",
+      "changes": {
+        "evidence_status": "officially_corroborated_policy_direction_primary_decision_text_pending",
+        "policy_targets": [
+          {
+            "name": "private_sector_ai_processor_access_target",
+            "value": 100000,
+            "unit": "AI_processors",
+            "status": "policy_target_not_deployed_capacity",
+            "source_id": "SRC_KNESSET_DECISION_4255_PRESENTATION"
+          }
+        ],
+        "remove_any_claim": "Do not describe the 100,000 target as purchased, installed, funded or operational."
+      }
+    },
+    {
+      "operation": "update_node",
+      "node_id": "ai21",
+      "changes": {
+        "company_origin_country": "Israel",
+        "headquarters_country": "Israel",
+        "verified_control_country": null,
+        "ownership_verification_status": "unverified_private_company",
+        "capability_status": "israel_based_model_capability",
+        "remove_or_avoid": [
+          "domestically_owned as a verified control claim",
+          "national sovereignty inferred from founder or headquarters location"
+        ]
+      },
+      "source_ids": [
+        "SRC_AI21_ABOUT_CONTROL_LIMIT",
+        "SRC_AI21_JAMBA"
+      ]
+    },
+    {
+      "operation": "add_validation_rules",
+      "rules": [
+        "Specialty semiconductor fabrication must not be visualized as leading-edge AI accelerator fabrication unless the source explicitly supports it.",
+        "Legislative thresholds must not be presented as operational facility capacity.",
+        "Hearing-reported metrics must retain speaker or institution attribution until the underlying primary presentation is archived.",
+        "Conflicting grid-connection metrics must be displayed as unresolved dated observations rather than silently replaced.",
+        "A private company's country of origin or headquarters must not populate verified_control_country."
+      ]
+    }
+  ],
+  "deferred_operations": [
+    {
+      "topic": "water_and_cooling",
+      "reason": "No sufficiently current national primary source was identified for Israeli AI data-center water demand or cooling constraints."
+    },
+    {
+      "topic": "backup_generation_and_fuel_continuity",
+      "reason": "Current site-level planning or environmental evidence is still required."
+    },
+    {
+      "topic": "government_decision_4255_full_text",
+      "reason": "Official legislative corroboration exists, but the stable official decision text has not been recovered."
+    }
+  ]
+}

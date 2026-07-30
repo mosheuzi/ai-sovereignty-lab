@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "Dataset v0.4 Patch Plan",
+    "created_on": "2026-07-30",
+    "status": "proposed_not_applied",
+    "principle": "Patch the canonical dataset only after source-audit findings are reviewed."
+  },
+  "operations": [
+    {
+      "operation": "update_node",
+      "node_id": "israel_power_system",
+      "changes": {
+        "replace_metric": {
+          "from": "natural_gas_share_of_electricity_generation, 74 percent, 2025",
+          "to": "natural_gas_share_of_electricity_generation, more than 70 percent, 2024"
+        },
+        "add_metrics": [
+          "natural_gas_storage_capacity: 0 BCM",
+          "share_of_2024_gas_production_exported: 49 percent",
+          "proven_reserves_updated_2025: approximately 870 BCM"
+        ],
+        "add_limitations": [
+          "No domestic natural-gas storage capacity was identified by the State Comptroller.",
+          "The audit warns of possible depletion in approximately 25 years under the current trajectory.",
+          "Domestic gas resources improve energy autonomy but do not guarantee data-center grid connection capacity or long-term resilience."
+        ]
+      },
+      "source_ids": ["SRC_ISRAEL_STATE_COMPTROLLER_GAS_2026"]
+    },
+    {
+      "operation": "add_node",
+      "node_id": "israel_semiconductor_ecosystem",
+      "capability_layer": "semiconductor_design",
+      "status": "operational",
+      "proposed_metrics": [
+        "approximately 45,000 employees",
+        "approximately 200 companies",
+        "approximately 75 percent of workers in chip design",
+        "approximately 16 percent in metrology and inspection"
+      ],
+      "notes": "This is an aggregate ecosystem node. Detailed company and fab nodes require primary-source validation.",
+      "source_ids": ["SRC_ISRAEL_INNOVATION_AUTHORITY_CHIP_INDUSTRY_2025"]
+    },
+    {
+      "operation": "add_program_edge",
+      "from": "israel_national_ai_program",
+      "to": "european_chips_joint_undertaking",
+      "category": "allied_research_access",
+      "status": "operational_program",
+      "notes": "Participation supports collaboration and funding access, not domestic fabrication sovereignty.",
+      "source_ids": ["SRC_ISRAEL_CHIPS_JU_2026"]
+    },
+    {
+      "operation": "update_node",
+      "node_id": "tsmc_arizona",
+      "changes": {
+        "total_planned_investment_usd_billion": 165,
+        "remove_incorrect_value_usd_billion": 265,
+        "operational_capacity": "first fab, N4 high-volume production since Q4 2024",
+        "planned_capacity": [
+          "second fab, N3, second half of 2027",
+          "third fab, N2 and A16, by end of decade",
+          "six fabs total",
+          "two advanced-packaging facilities",
+          "one R&D center"
+        ]
+      },
+      "source_ids": ["SRC_TSMC_ARIZONA_CURRENT"]
+    },
+    {
+      "operation": "update_node",
+      "node_id": "micron_us_memory_hbm",
+      "changes": {
+        "broader_us_investment_plan_usd_billion": 200,
+        "hbm_packaging_status": "planned_not_operational",
+        "timing_note": "Planned after completion of the second Idaho fab."
+      },
+      "source_ids": ["SRC_MICRON_US_HBM_CURRENT"]
+    },
+    {
+      "operation": "update_node",
+      "node_id": "intel_us_manufacturing",
+      "changes": {
+        "final_chips_act_direct_funding_usd_billion_max": 7.86,
+        "broader_investment_plan_usd_billion_plus": 100,
+        "supported_locations": ["Arizona", "New Mexico", "Ohio", "Oregon"]
+      },
+      "source_ids": ["SRC_INTEL_US_CHIPS_FINAL"]
+    },
+    {
+      "operation": "update_node",
+      "node_id": "us_power_and_grid_for_ai",
+      "changes": {
+        "data_center_electricity_2023_percent": 4.4,
+        "data_center_electricity_2023_twh": 176,
+        "forecast_2028_percent_range": [6.7, 12],
+        "forecast_2028_twh_range": [325, 580]
+      },
+      "source_ids": ["SRC_US_DATA_CENTER_ENERGY_LINE_AUDIT"]
+    },
+    {
+      "operation": "schema_change",
+      "target": "private_company_nationality",
+      "changes": {
+        "replace": "domestically_owned",
+        "with_fields": [
+          "company_origin_country",
+          "headquarters_country",
+          "operating_countries",
+          "verified_control_country",
+          "ownership_verification_status"
+        ]
+      },
+      "reason": "Private-company cap tables and control rights are not reliably inferred from product pages or headquarters location."
+    },
+    {
+      "operation": "source_policy_change",
+      "target": "INSS publications",
+      "changes": {
+        "default_source_role": "secondary_strategic_analysis",
+        "allowed_for": ["strategic framing", "policy alternatives", "research hypotheses"],
+        "not_sufficient_for": ["current operational metrics", "current ownership", "current investment status"]
+      }
+    }
+  ]
+}
