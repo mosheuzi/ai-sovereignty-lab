@@ -1,0 +1,36 @@
+{
+  "id": "US",
+  "strengths": [
+    "frontier model labs",
+    "cloud platforms",
+    "accelerator design",
+    "capital",
+    "software platforms"
+  ],
+  "external_dependencies": [
+    "advanced fabrication",
+    "HBM supply",
+    "EUV lithography",
+    "selected critical materials",
+    "electricity and permitting"
+  ],
+  "strategic_character": "Broadest commercial AI stack, but not vertically self-sufficient.",
+  "capability_stack": {
+    "energy_and_grid": {"status":"domestically_operated_mixed_ownership","node_ids":["us_power_and_grid_for_ai"],"external_dependencies":[],"gap":"Grid connection and generation expansion are constraints.","confidence":"high"},
+    "international_connectivity": {"status":"shared_global","node_ids":["global_subsea_cables"],"external_dependencies":["global cable routes and landing infrastructure"],"gap":null,"confidence":"high"},
+    "data_centers_physical_compute": {"status":"domestically_operated_mixed_ownership","node_ids":["us_data_center_infrastructure","stargate_us"],"external_dependencies":[],"gap":"Power and permitting can delay new capacity.","confidence":"high"},
+    "cloud_regions_platforms": {"status":"domestically_owned","node_ids":["aws","microsoft_azure","google_cloud"],"external_dependencies":[],"gap":null,"confidence":"high"},
+    "semiconductor_design": {"status":"domestically_owned","node_ids":["nvidia","amd","google_tpu_broadcom","aws_trainium","cerebras","intel"],"external_dependencies":[],"gap":null,"confidence":"high"},
+    "semiconductor_fabrication_packaging": {"status":"domestically_operated_mixed_ownership","node_ids":["us_semiconductor_manufacturing","intel_us_manufacturing","tsmc_arizona"],"external_dependencies":["ASML and international materials/equipment"],"gap":"Domestic capacity is expanding but corporate and equipment dependencies remain global.","confidence":"high"},
+    "accelerators_memory": {"status":"partial","node_ids":["advanced_ai_accelerators","micron_us_memory_hbm"],"external_dependencies":["East Asian HBM and packaging during transition"],"gap":"Planned U.S. HBM capacity is not fully operational.","confidence":"high"},
+    "model_labs": {"status":"domestically_owned","node_ids":["openai","anthropic"],"external_dependencies":[],"gap":null,"confidence":"high"},
+    "data_language_assets": {"status":"research_required","node_ids":[],"external_dependencies":[],"gap":"A defensible inventory of proprietary, public and licensed training data is required.","confidence":"medium"},
+    "applications_industrial_ai": {"status":"partial","node_ids":["openai","anthropic","aws","microsoft_azure","google_cloud"],"external_dependencies":[],"gap":null,"confidence":"medium"},
+    "talent_research": {"status":"partial","node_ids":["nvidia","openai","anthropic","intel"],"external_dependencies":[],"gap":"No national talent metric is included.","confidence":"medium"},
+    "capital_procurement": {"status":"domestically_owned","node_ids":["stargate_us"],"external_dependencies":[],"gap":null,"confidence":"high"},
+    "regulation_export_controls": {"status":"domestically_owned","node_ids":["us_export_controls"],"external_dependencies":[],"gap":null,"confidence":"high"}
+  },
+  "research_completeness_score": 0.92,
+  "capability_presence_score_unweighted": 0.92,
+  "score_warning": "These scores measure map completeness and presence, not national AI power."
+}
