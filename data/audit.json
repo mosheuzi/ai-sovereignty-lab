@@ -1,0 +1,68 @@
+{
+  "audited_claims": [
+    {
+      "claim_id": "AUDIT_001",
+      "claim": "OpenAI closed $122B in committed capital at a $852B post-money valuation.",
+      "result": "verified",
+      "source_ids": ["SRC_OPENAI_VALUATION"],
+      "claim_type": "official_financing_disclosure",
+      "render_default": false
+    },
+    {
+      "claim_id": "AUDIT_002",
+      "claim": "Anthropic raised $65B in Series H at a $965B post-money valuation.",
+      "result": "verified",
+      "source_ids": ["SRC_ANTHROPIC_VALUATION"],
+      "claim_type": "official_financing_disclosure",
+      "render_default": false
+    },
+    {
+      "claim_id": "AUDIT_003",
+      "claim": "OpenAI and NVIDIA announced at least 10 GW of NVIDIA systems.",
+      "result": "verified_as_letter_of_intent",
+      "source_ids": ["SRC_OPENAI_NVIDIA"],
+      "claim_type": "future_infrastructure_announcement"
+    },
+    {
+      "claim_id": "AUDIT_004",
+      "claim": "Anthropic announced up to 5 GW of AWS capacity and more than $100B over ten years.",
+      "result": "verified",
+      "source_ids": ["SRC_ANTHROPIC_AMAZON"],
+      "claim_type": "long_term_compute_commitment"
+    },
+    {
+      "claim_id": "AUDIT_005",
+      "claim": "Cerebras disclosed 750 MW of committed OpenAI capacity in a deal valued above $20B.",
+      "result": "verified_sec_filing",
+      "source_ids": ["SRC_CEREBRAS_OPENAI_SEC", "SRC_CEREBRAS_Q1_2026_8K"],
+      "claim_type": "contractual_capacity_and_filed_deal_value"
+    },
+    {
+      "claim_id": "AUDIT_006",
+      "claim": "Microsoft disclosed an approximately $135B OpenAI investment representing roughly 27 percent.",
+      "result": "verified",
+      "source_ids": ["SRC_MICROSOFT_OPENAI"],
+      "claim_type": "official_ownership_disclosure"
+    }
+  ],
+  "audit_findings": {
+    "gemini_critique_assessment": {
+      "central_financial_and_compute_claims": "The critique is factually incorrect on the named examples.",
+      "likely_failure_mode": "The reviewer appears to have treated current 2026 official disclosures as hypothetical or evaluated them against an older information baseline."
+    },
+    "real_issues_found_in_v0_1": [
+      {
+        "issue": "The Google/Broadcom to Anthropic edge used an exact 5 GW figure while its attached dedicated source said only multiple gigawatts.",
+        "resolution": "Changed the value to multiple GW and marked the exact quantity as undisclosed."
+      },
+      {
+        "issue": "The Cerebras edge cited the 10-Q for both capacity and deal value, although the more-than-$20B wording is clearest in the filed 8-K results release.",
+        "resolution": "Added the 8-K source and linked both filings to the edge."
+      },
+      {
+        "issue": "Private-company valuations could distract from the sovereignty analysis even though they were excluded from node sizing.",
+        "resolution": "Kept them as verified dated context, but disabled their rendering by default."
+      }
+    ]
+  }
+}
