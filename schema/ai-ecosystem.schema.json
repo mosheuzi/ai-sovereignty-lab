@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/ai-sovereignty-lab/ai-ecosystem.schema.json",
+  "title": "AI Sovereignty Lab Dataset",
+  "type": "object",
+  "required": [
+    "metadata",
+    "ecosystems",
+    "nodes",
+    "edges",
+    "sources"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "title",
+        "version",
+        "purpose"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        }
+      }
+    },
+    "ecosystems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "layer",
+          "ecosystem",
+          "type",
+          "source_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "from",
+          "to",
+          "category",
+          "status",
+          "claim_class",
+          "confidence",
+          "source_ids"
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "publisher",
+          "title",
+          "date",
+          "url",
+          "source_type"
+        ]
+      }
+    }
+  }
+}
