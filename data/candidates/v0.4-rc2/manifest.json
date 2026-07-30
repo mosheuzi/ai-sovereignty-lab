@@ -1,0 +1,34 @@
+{
+  "dataset_version": "0.4-rc2",
+  "status": "research_release_candidate",
+  "format": "direct-json-plus-gzip-base64-multipart",
+  "direct_json": "ai-ecosystem-v0.4-rc2.json",
+  "canonical_dataset": {
+    "encoding": "base64",
+    "compression": "gzip",
+    "parts": [
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-01",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-02",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-03",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-04",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-05",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-06",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-07",
+      "canonical-small/ai-ecosystem-v0.4-rc2.json.gz.b64.chunk-08"
+    ],
+    "gzip_sha256": "5b29d677f9e6a309b9d0ee306f81cfdeb69828433d6095166079a4a7c0457b4d",
+    "decoded_json_sha256": "5af9cb66078f92db67b9679f853105dc42662ab12c32c82e501156b0b87c2c0a",
+    "decoded_content_type": "application/json",
+    "decoded_bytes": 206861
+  },
+  "validation_report": "validation-report-v0.4-rc2.json",
+  "changelog": "CHANGELOG.md",
+  "counts": {
+    "ecosystems": 7,
+    "nodes": 60,
+    "edges": 75,
+    "sources": 66,
+    "capability_layers": 13
+  },
+  "publication_readiness": "pass_with_open_research_items"
+}

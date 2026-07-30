@@ -1,0 +1,29 @@
+{
+  "dataset_version": "0.4-rc2",
+  "validated_on": "2026-07-30",
+  "counts": {
+    "ecosystems": 7,
+    "nodes": 60,
+    "edges": 75,
+    "sources": 66,
+    "capability_layers": 13
+  },
+  "errors": [],
+  "warnings": [],
+  "domain_checks": {
+    "tower_specialty_not_leading_edge": "pass",
+    "legislative_threshold_not_capacity": "pass",
+    "conflicting_grid_metrics_preserved": "pass",
+    "decision_4255_target_non_operational": "pass",
+    "ai21_control_not_inferred": "pass"
+  },
+  "open_research_items": [
+    "Recover a stable official full-text source for Government Decision 4255.",
+    "Obtain underlying Electricity Authority or Noga materials and reconcile 2,500 MVA versus approximately 20,000 MW request figures.",
+    "Confirm final legal status and published text of Planning and Building Amendment 168.",
+    "Research Israel data-center water, cooling, backup-generation and fuel-continuity requirements.",
+    "Manually review the user-supplied INSS article and map strategic claims to current primary sources.",
+    "Complete ecosystem audits beyond Israel and selected U.S. nodes."
+  ],
+  "publication_readiness": "pass_with_open_research_items"
+}
