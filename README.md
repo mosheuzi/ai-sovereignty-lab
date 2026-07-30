@@ -10,7 +10,7 @@ This project does not begin with a predetermined answer. It provides a transpare
 
 **Public research draft. Not ready for authoritative citation.**
 
-The repository currently contains the research dataset and planning documents. The interactive application has not yet been implemented.
+The repository currently contains the research dataset, source catalogue, methodology and product plan. The interactive application has not yet been implemented.
 
 Structural validation means that references, node identifiers and capability layers are internally consistent. It does **not** mean that the research is complete or that every factual claim has received final editorial review.
 
@@ -54,9 +54,19 @@ A capability located inside a country is not automatically considered sovereign.
 
 ```text
 data/
-  ai-ecosystem-v0.3.json
+  manifest.json
+  config.json
   sources.json
+  audit.json
   validation-report-v0.3.json
+  canonical/
+    ai-ecosystem-v0.3.json.gz.b64.part-01
+    ai-ecosystem-v0.3.json.gz.b64.part-02
+    ai-ecosystem-v0.3.json.gz.b64.part-03
+    ai-ecosystem-v0.3.json.gz.b64.part-04
+  ecosystems/
+    us.json
+    israel.json
 
 docs/
   RESEARCH_PLAN.md
@@ -81,6 +91,32 @@ DATA_LICENSE.md
 - Nodes: `52`
 - Edges: `60`
 - Sources: `52`
+
+## Loading the canonical dataset
+
+The complete research dataset is stored as a deterministic gzip archive, encoded as base64 and split into four text files. The manifest contains the ordered list and the SHA-256 checksum of the gzip payload.
+
+A future browser client can load it without a backend:
+
+```js
+const manifest = await fetch('/data/manifest.json').then((response) => response.json());
+
+const chunks = await Promise.all(
+  manifest.canonical_dataset.parts.map((path) =>
+    fetch(`/data/${path}`).then((response) => response.text())
+  )
+);
+
+const base64 = chunks.join('').replace(/\s/g, '');
+const compressed = Uint8Array.from(atob(base64), (character) => character.charCodeAt(0));
+const stream = new Blob([compressed])
+  .stream()
+  .pipeThrough(new DecompressionStream('gzip'));
+
+const dataset = await new Response(stream).json();
+```
+
+The expanded ecosystem files are currently partial and intended to become a contribution-friendly representation of the canonical data during the implementation phase.
 
 ## Source policy
 
@@ -108,7 +144,7 @@ Representative primary sources include:
 
 ## Planned interactive experience
 
-The first public MVP will be front-end only. Users will be able to:
+The first MVP will be front-end only. Users will be able to:
 
 - Compare national capability stacks
 - Switch between operational, planned and policy-only capabilities
@@ -118,14 +154,21 @@ The first public MVP will be front-end only. Users will be able to:
 - Explore operational, legal and supply-chain sovereignty separately
 - Reach their own conclusion rather than receiving a single opaque sovereignty score
 
-## Publication path
+## Work phases
 
-1. Complete and audit the research dataset
-2. Build an interactive MVP
-3. Test the explanatory model with domain experts
-4. Invite evidence-backed contributions
-5. Deploy the application independently
-6. Embed it inside Moshe Uziel's personal website as an interactive research experience
+### Research
+
+Audit the sources, refine the definitions, complete the capability stacks and produce evidence-backed disruption scenarios.
+
+### Planning
+
+Design the information architecture, visual language, graph interactions, comparison flow and website integration.
+
+### Execution
+
+Build a static React and TypeScript front-end, validate the dataset in CI, publish it on Vercel and integrate it into `mosheuziel.com/labs/ai-sovereignty`.
+
+See the detailed plans in the [`docs`](docs/) directory.
 
 ## Project principle
 
