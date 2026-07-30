@@ -1,8 +1,8 @@
 # Audit Status
 
-## Sprint 1
+## Sprint 1 and Sprint 2
 
-Status: completed
+Status: v0.4-rc1 build candidate created and structurally validated.
 
 Completed:
 
@@ -10,37 +10,32 @@ Completed:
 - Israel cloud and model source audit
 - Intel Israel and NVIDIA Israel research verification
 - Nimbus verification
-- Decision 4255 source-gap identification
+- Decision 4255 source-gap identification and partial Knesset corroboration
 - Initial dependency scenario catalogue
+- Israel semiconductor ecosystem expansion
+- Israel energy-resilience correction
+- TSMC Arizona material correction
+- Intel U.S., Micron HBM and U.S. data-center electricity audits
+- Canonical v0.4-rc1 build candidate
+- Reproducible checksum, decompression and graph-reference CI validation
 
-## Sprint 2
+Current candidate:
 
-Status: completed with open items
+- 7 ecosystems
+- 13 capability layers
+- 57 nodes
+- 67 edges
+- 61 sources
+- 0 structural errors
+- 0 isolated nodes
 
-Completed:
+Pending research:
 
-- Israel semiconductor-sector audit using the Israel Innovation Authority overview
-- Israel participation in Chips JU classified as allied research access
-- Israel natural-gas and electricity resilience audit
-- TSMC Arizona operational and planned capacity audit
-- Intel U.S. CHIPS Act and manufacturing audit
-- Micron U.S. HBM plan audit
-- U.S. data-center electricity line-level audit
-- Proposed v0.4 patch plan
-- INSS source-role assessment
+- Stable official full text of Government Decision 4255
+- Tower Semiconductor primary-source audit
+- AI21 and other private-company control verification
+- Israel data-center grid connection, water, cooling and backup-power evidence
+- Manual review of the user-supplied INSS article
+- Remaining ecosystem audits beyond Israel and selected U.S. capabilities
 
-Material corrections identified:
-
-- TSMC Arizona total planned investment must be corrected from USD 265 billion to USD 165 billion.
-- Israel gas-backed electricity should use more than 70 percent in 2024, not the unaudited 74 percent in 2025.
-- Israel's energy node must show zero natural-gas storage capacity and long-term reserve risk.
-- Micron U.S. HBM packaging remains planned, not operational.
-- Private-company nationality requires separate origin, headquarters, control and ownership-verification fields.
-
-Open items before dataset v0.4 rebuild:
-
-- Stable official text of Government Decision 4255
-- Manual review of the exact user-supplied INSS page
-- Primary-source audit of Tower Semiconductor in Israel
-- AI21 corporate-control classification or schema downgrade
-- Israel electricity grid, water, cooling and data-center connection constraints
+The candidate remains in a Draft PR and is not ready for authoritative citation or merge to main.
